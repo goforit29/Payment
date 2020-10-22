@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: PaymentContext
+  name: payment
   labels:
-    app: PaymentContext
+    app: payment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: PaymentContext
+      app: payment
   template:
     metadata:
       labels:
-        app: PaymentContext
+        app: payment
     spec:
       containers:
-        - name: PaymentContext
-          image: username/PaymentContext:latest
+        - name: payment
+          image: username/payment:latest
           ports:
             - containerPort: 8080
           readinessProbe:
