@@ -21,7 +21,7 @@ public class PaymentAgg {
         BeanUtils.copyProperties(this, paid);
         paid.publishAfterCommit();
         try {
-                Thread.currentThread().sleep((long) (500 + Math.random() * 100));
+                Thread.currentThread().sleep((long) (400 + Math.random() * 300));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
