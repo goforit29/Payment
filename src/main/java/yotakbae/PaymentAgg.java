@@ -36,6 +36,13 @@ public class PaymentAgg {
         PayCanceled payCanceled = new PayCanceled();
         BeanUtils.copyProperties(this, payCanceled);
         payCanceled.publishAfterCommit();
+        
+        
+        try {
+            Thread.currentThread().sleep((long) (450 + Math.random() * 100));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
     }
