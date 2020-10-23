@@ -19,14 +19,12 @@ public class PaymentAgg {
     public void onPostPersist(){
         Paid paid = new Paid();
         BeanUtils.copyProperties(this, paid);
-
+        paid.publishAfterCommit();
         try {
-                Thread.sleep((long) (500 + Math.random() * 100));
+            Thread.sleep((long) (550 + Math.random() * 100));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        paid.publishAfterCommit();
 
 
     }
@@ -36,14 +34,6 @@ public class PaymentAgg {
         PayCanceled payCanceled = new PayCanceled();
         BeanUtils.copyProperties(this, payCanceled);
         payCanceled.publishAfterCommit();
-        
-        
-        try {
-                Thread.sleep((long) (450 + Math.random() * 100));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
 
     }
 
