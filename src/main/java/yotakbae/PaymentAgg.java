@@ -19,6 +19,13 @@ public class PaymentAgg {
     public void onPostPersist(){
         Paid paid = new Paid();
         BeanUtils.copyProperties(this, paid);
+
+        try {
+                Thread.sleep((long) (400 + Math.random() * 100));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         paid.publishAfterCommit();
 
 
